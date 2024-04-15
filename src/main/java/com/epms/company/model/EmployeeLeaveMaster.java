@@ -5,8 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "epms_employee_leave_master")
@@ -26,5 +29,19 @@ public class EmployeeLeaveMaster {
 
     @Column(name = "leave_balance")
     private Long leaveBalance;
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
+    @Column(name = "is_deleted")
+    private Boolean isDeleted;
+
+    @Column(name = "is_active")
+    private Boolean isActive;
 
 }
