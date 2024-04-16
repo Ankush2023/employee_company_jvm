@@ -10,6 +10,7 @@ public class EmployeeLeaveMasterRequest {
     private Long employeeLeaveMasterId;
     private LeaveType leaveType;
     private Long leaveBalance;
+    private Long companyId;
 
 
 

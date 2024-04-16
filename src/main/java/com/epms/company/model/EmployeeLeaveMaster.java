@@ -44,4 +44,8 @@ public class EmployeeLeaveMaster {
     @Column(name = "is_active")
     private Boolean isActive;
 
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
+
 }
